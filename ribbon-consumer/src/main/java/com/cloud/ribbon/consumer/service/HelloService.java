@@ -18,6 +18,6 @@ public class HelloService {
     public  String sayHello(){
         //调用provider服务
         System.out.println("通过rest  调用provider服务");
-        return restTemplate.getForObject("http://ribbon-provider/hello?name=weilinhui",String.class);
+        return restTemplate.getForObject("http://ribbon-provider/hello?name=ribbon",String.class);
     }
 }    

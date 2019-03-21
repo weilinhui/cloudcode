@@ -8,11 +8,13 @@
 		<version>2.1.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.cloud.ribbon.consumer</groupId>
 	<artifactId>ribbon-consumer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ribbon-consumer</name>
 	<description>Demo project for Spring Boot</description>
+	<packaging>war</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -53,12 +55,13 @@
 	</dependencyManagement>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
+		<finalName>ribbon-consumer</finalName>
+		<!--<plugins>-->
+			<!--<plugin>-->
+				<!--<groupId>org.springframework.boot</groupId>-->
+				<!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+			<!--</plugin>-->
+		<!--</plugins>-->
 	</build>
 
 </project>

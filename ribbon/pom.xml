@@ -8,11 +8,13 @@
 		<version>2.1.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.cloud.ribbon</groupId>
 	<artifactId>ribbon</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ribbon</name>
 	<description>Demo project for Spring Boot</description>
+	<packaging>war</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -38,6 +40,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- springBoot mybatis包-->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<!-- mysql 连接包 mybatis包-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.40</version>
+		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
@@ -53,12 +69,66 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>ribbon</finalName>
+
 		<plugins>
+			<!--<plugin>-->
+				<!--<groupId>org.springframework.boot</groupId>-->
+				<!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+			<!--</plugin>-->
+
+			<!-- 测试代码出错不影响项目的编译-->
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+
+			<!-- 配置mybatis自动生成mapper文件工具 -->
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<configuration>
+					<!--配置文件的位置-->
+					<configurationFile>src/main/resources/generatorConfig.xml</configurationFile>
+					<verbose>true</verbose>
+					<overwrite>true</overwrite>
+				</configuration>
+				<executions>
+					<execution>
+						<id>Generate MyBatis Artifacts</id>
+						<!--maven打包时 不会生成新的mapper文件 -->
+						<phase>deploy</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.mybatis.generator</groupId>
+						<artifactId>mybatis-generator-core</artifactId>
+						<version>1.3.2</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
+
+		<!-- 设置配置文件打包路径 -->
+		<!--<resources>-->
+		<!--<resource>-->
+			<!--<directory>src/main/resources</directory>-->
+			<!--<includes>-->
+				<!--<include>**/*.yml</include>-->
+				<!--<include>**/*.properties</include>-->
+				<!--<include>**/*.xml</include>-->
+			<!--</includes>-->
+			<!--<filtering>false</filtering>-->
+		<!--</resource>-->
+		<!--</resources>-->
 	</build>
 
 </project>

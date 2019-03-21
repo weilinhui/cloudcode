@@ -1,0 +1,4 @@
+com\cloud\feign\rpc\GetHello.class
+com\cloud\feign\controller\HelloController.class
+com\cloud\feign\FeignApplication.class
+com\cloud\feign\service\HelloService.class

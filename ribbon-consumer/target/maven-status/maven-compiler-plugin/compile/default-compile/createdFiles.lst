@@ -1,0 +1,3 @@
+com\cloud\ribbon\consumer\controller\HelloController.class
+com\cloud\ribbon\consumer\service\HelloService.class
+com\cloud\ribbon\consumer\RibbonConsumerApplication.class
