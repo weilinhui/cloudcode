@@ -1,21 +1,19 @@
 package com.cloud.ribbon.mapper;
 
 import com.cloud.ribbon.pojo.UserBean;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface UserBeanMapper {
-    int deleteByPrimaryKey(Integer userId);
+    int deleteByPrimaryKey(Long fId);
 
     int insert(UserBean record);
 
     int insertSelective(UserBean record);
 
-    UserBean selectByPrimaryKey(Integer userId);
+    UserBean selectByPrimaryKey(Long fId);
 
     int updateByPrimaryKeySelective(UserBean record);
 
     int updateByPrimaryKey(UserBean record);
 
-    UserBean queryLogin(UserBean user);
+	UserBean queryLogin(UserBean record);
 }

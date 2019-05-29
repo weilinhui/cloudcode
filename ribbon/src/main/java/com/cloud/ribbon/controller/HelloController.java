@@ -31,7 +31,7 @@ public class HelloController {
         userBean = helloService.queryLogin(userBean);
         if(userBean!=null){
             session.setAttribute("user",userBean);
-            return userBean.getUserRelname();
+            return userBean.getfUserRelname();
         }
         return "error";
     }

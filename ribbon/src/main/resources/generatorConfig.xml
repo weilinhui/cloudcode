@@ -11,7 +11,7 @@
         </commentGenerator>
 
         <!-- 数据库链接地址账号密码 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://47.100.54.2:3306/sunflower" userId="root" password="Abc123!_">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.154.128:3306/sunflower" userId="root" password="123456">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
