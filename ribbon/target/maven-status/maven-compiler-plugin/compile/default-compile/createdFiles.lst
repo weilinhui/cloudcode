@@ -1,5 +1,13 @@
 com\cloud\ribbon\mapper\UserBeanMapper.class
-com\cloud\ribbon\pojo\UserBean.class
-com\cloud\ribbon\RibbonApplication.class
+com\cloud\ribbon\mapper\BlogPictureMapper.class
 com\cloud\ribbon\controller\UserControllerProvider.class
-com\cloud\ribbon\service\UserServiceProviderImpl.class
+com\cloud\ribbon\pojo\BlogType.class
+com\cloud\ribbon\mapper\BlogCommentMapper.class
+com\cloud\ribbon\mapper\BlogInfoMapper.class
+com\cloud\ribbon\pojo\UserBean.class
+com\cloud\ribbon\pojo\BlogInfoWithBLOBs.class
+com\cloud\ribbon\RibbonApplication.class
+com\cloud\ribbon\pojo\BlogPicture.class
+com\cloud\ribbon\mapper\BlogTypeMapper.class
+com\cloud\ribbon\pojo\BlogComment.class
+com\cloud\ribbon\pojo\BlogInfo.class

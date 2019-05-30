@@ -1,5 +1,14 @@
-E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\pojo\UserBean.java
-E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\service\UserServiceProviderImpl.java
 E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\mapper\UserBeanMapper.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\mapper\BlogCommentMapper.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\pojo\UserBean.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\mapper\BlogPictureMapper.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\mapper\BlogTypeMapper.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\pojo\BlogInfoWithBLOBs.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\service\UserServiceProviderImpl.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\pojo\BlogInfo.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\pojo\BlogType.java
 E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\RibbonApplication.java
 E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\controller\UserControllerProvider.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\pojo\BlogPicture.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\mapper\BlogInfoMapper.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\pojo\BlogComment.java

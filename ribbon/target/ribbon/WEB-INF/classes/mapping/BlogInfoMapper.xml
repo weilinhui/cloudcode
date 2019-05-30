@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.ribbon.mapper.BlogInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.cloud.ribbon.pojo.BlogInfo" >
+    <id column="f_id" property="fId" jdbcType="BIGINT" />
+    <result column="f_code" property="fCode" jdbcType="VARCHAR" />
+    <result column="f_title" property="fTitle" jdbcType="VARCHAR" />
+    <result column="f_type" property="fType" jdbcType="VARCHAR" />
+    <result column="f_auther" property="fAuther" jdbcType="VARCHAR" />
+    <result column="f_is_private" property="fIsPrivate" jdbcType="BIGINT" />
+    <result column="f_great_count" property="fGreatCount" jdbcType="BIGINT" />
+    <result column="f_status" property="fStatus" jdbcType="INTEGER" />
+    <result column="f_sort" property="fSort" jdbcType="BIGINT" />
+    <result column="f_create_user" property="fCreateUser" jdbcType="BIGINT" />
+    <result column="f_create_date" property="fCreateDate" jdbcType="DATE" />
+    <result column="f_update_date" property="fUpdateDate" jdbcType="DATE" />
+    <result column="f_version" property="fVersion" jdbcType="BIGINT" />
+    <result column="f_is_delete" property="fIsDelete" jdbcType="BIGINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.cloud.ribbon.pojo.BlogInfoWithBLOBs" extends="BaseResultMap" >
+    <result column="f_blog_content" property="fBlogContent" jdbcType="LONGVARCHAR" />
+    <result column="f_blog_content_text" property="fBlogContentText" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_id, f_code, f_title, f_type, f_auther, f_is_private, f_great_count, f_status, f_sort, 
+    f_create_user, f_create_date, f_update_date, f_version, f_is_delete
+  </sql>
+  <sql id="Blob_Column_List" >
+    f_blog_content, f_blog_content_text
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from sys_blog_info
+    where f_id = #{fId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sys_blog_info
+    where f_id = #{fId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.cloud.ribbon.pojo.BlogInfoWithBLOBs" >
+    insert into sys_blog_info (f_id, f_code, f_title, 
+      f_type, f_auther, f_is_private, 
+      f_great_count, f_status, f_sort, 
+      f_create_user, f_create_date, f_update_date, 
+      f_version, f_is_delete, f_blog_content, 
+      f_blog_content_text)
+    values (#{fId,jdbcType=BIGINT}, #{fCode,jdbcType=VARCHAR}, #{fTitle,jdbcType=VARCHAR}, 
+      #{fType,jdbcType=VARCHAR}, #{fAuther,jdbcType=VARCHAR}, #{fIsPrivate,jdbcType=BIGINT}, 
+      #{fGreatCount,jdbcType=BIGINT}, #{fStatus,jdbcType=INTEGER}, #{fSort,jdbcType=BIGINT}, 
+      #{fCreateUser,jdbcType=BIGINT}, #{fCreateDate,jdbcType=DATE}, #{fUpdateDate,jdbcType=DATE}, 
+      #{fVersion,jdbcType=BIGINT}, #{fIsDelete,jdbcType=BIGINT}, #{fBlogContent,jdbcType=LONGVARCHAR}, 
+      #{fBlogContentText,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cloud.ribbon.pojo.BlogInfoWithBLOBs" >
+    insert into sys_blog_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fId != null" >
+        f_id,
+      </if>
+      <if test="fCode != null" >
+        f_code,
+      </if>
+      <if test="fTitle != null" >
+        f_title,
+      </if>
+      <if test="fType != null" >
+        f_type,
+      </if>
+      <if test="fAuther != null" >
+        f_auther,
+      </if>
+      <if test="fIsPrivate != null" >
+        f_is_private,
+      </if>
+      <if test="fGreatCount != null" >
+        f_great_count,
+      </if>
+      <if test="fStatus != null" >
+        f_status,
+      </if>
+      <if test="fSort != null" >
+        f_sort,
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user,
+      </if>
+      <if test="fCreateDate != null" >
+        f_create_date,
+      </if>
+      <if test="fUpdateDate != null" >
+        f_update_date,
+      </if>
+      <if test="fVersion != null" >
+        f_version,
+      </if>
+      <if test="fIsDelete != null" >
+        f_is_delete,
+      </if>
+      <if test="fBlogContent != null" >
+        f_blog_content,
+      </if>
+      <if test="fBlogContentText != null" >
+        f_blog_content_text,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fId != null" >
+        #{fId,jdbcType=BIGINT},
+      </if>
+      <if test="fCode != null" >
+        #{fCode,jdbcType=VARCHAR},
+      </if>
+      <if test="fTitle != null" >
+        #{fTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="fType != null" >
+        #{fType,jdbcType=VARCHAR},
+      </if>
+      <if test="fAuther != null" >
+        #{fAuther,jdbcType=VARCHAR},
+      </if>
+      <if test="fIsPrivate != null" >
+        #{fIsPrivate,jdbcType=BIGINT},
+      </if>
+      <if test="fGreatCount != null" >
+        #{fGreatCount,jdbcType=BIGINT},
+      </if>
+      <if test="fStatus != null" >
+        #{fStatus,jdbcType=INTEGER},
+      </if>
+      <if test="fSort != null" >
+        #{fSort,jdbcType=BIGINT},
+      </if>
+      <if test="fCreateUser != null" >
+        #{fCreateUser,jdbcType=BIGINT},
+      </if>
+      <if test="fCreateDate != null" >
+        #{fCreateDate,jdbcType=DATE},
+      </if>
+      <if test="fUpdateDate != null" >
+        #{fUpdateDate,jdbcType=DATE},
+      </if>
+      <if test="fVersion != null" >
+        #{fVersion,jdbcType=BIGINT},
+      </if>
+      <if test="fIsDelete != null" >
+        #{fIsDelete,jdbcType=BIGINT},
+      </if>
+      <if test="fBlogContent != null" >
+        #{fBlogContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fBlogContentText != null" >
+        #{fBlogContentText,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cloud.ribbon.pojo.BlogInfoWithBLOBs" >
+    update sys_blog_info
+    <set >
+      <if test="fCode != null" >
+        f_code = #{fCode,jdbcType=VARCHAR},
+      </if>
+      <if test="fTitle != null" >
+        f_title = #{fTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="fType != null" >
+        f_type = #{fType,jdbcType=VARCHAR},
+      </if>
+      <if test="fAuther != null" >
+        f_auther = #{fAuther,jdbcType=VARCHAR},
+      </if>
+      <if test="fIsPrivate != null" >
+        f_is_private = #{fIsPrivate,jdbcType=BIGINT},
+      </if>
+      <if test="fGreatCount != null" >
+        f_great_count = #{fGreatCount,jdbcType=BIGINT},
+      </if>
+      <if test="fStatus != null" >
+        f_status = #{fStatus,jdbcType=INTEGER},
+      </if>
+      <if test="fSort != null" >
+        f_sort = #{fSort,jdbcType=BIGINT},
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user = #{fCreateUser,jdbcType=BIGINT},
+      </if>
+      <if test="fCreateDate != null" >
+        f_create_date = #{fCreateDate,jdbcType=DATE},
+      </if>
+      <if test="fUpdateDate != null" >
+        f_update_date = #{fUpdateDate,jdbcType=DATE},
+      </if>
+      <if test="fVersion != null" >
+        f_version = #{fVersion,jdbcType=BIGINT},
+      </if>
+      <if test="fIsDelete != null" >
+        f_is_delete = #{fIsDelete,jdbcType=BIGINT},
+      </if>
+      <if test="fBlogContent != null" >
+        f_blog_content = #{fBlogContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fBlogContentText != null" >
+        f_blog_content_text = #{fBlogContentText,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where f_id = #{fId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cloud.ribbon.pojo.BlogInfoWithBLOBs" >
+    update sys_blog_info
+    set f_code = #{fCode,jdbcType=VARCHAR},
+      f_title = #{fTitle,jdbcType=VARCHAR},
+      f_type = #{fType,jdbcType=VARCHAR},
+      f_auther = #{fAuther,jdbcType=VARCHAR},
+      f_is_private = #{fIsPrivate,jdbcType=BIGINT},
+      f_great_count = #{fGreatCount,jdbcType=BIGINT},
+      f_status = #{fStatus,jdbcType=INTEGER},
+      f_sort = #{fSort,jdbcType=BIGINT},
+      f_create_user = #{fCreateUser,jdbcType=BIGINT},
+      f_create_date = #{fCreateDate,jdbcType=DATE},
+      f_update_date = #{fUpdateDate,jdbcType=DATE},
+      f_version = #{fVersion,jdbcType=BIGINT},
+      f_is_delete = #{fIsDelete,jdbcType=BIGINT},
+      f_blog_content = #{fBlogContent,jdbcType=LONGVARCHAR},
+      f_blog_content_text = #{fBlogContentText,jdbcType=LONGVARCHAR}
+    where f_id = #{fId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cloud.ribbon.pojo.BlogInfo" >
+    update sys_blog_info
+    set f_code = #{fCode,jdbcType=VARCHAR},
+      f_title = #{fTitle,jdbcType=VARCHAR},
+      f_type = #{fType,jdbcType=VARCHAR},
+      f_auther = #{fAuther,jdbcType=VARCHAR},
+      f_is_private = #{fIsPrivate,jdbcType=BIGINT},
+      f_great_count = #{fGreatCount,jdbcType=BIGINT},
+      f_status = #{fStatus,jdbcType=INTEGER},
+      f_sort = #{fSort,jdbcType=BIGINT},
+      f_create_user = #{fCreateUser,jdbcType=BIGINT},
+      f_create_date = #{fCreateDate,jdbcType=DATE},
+      f_update_date = #{fUpdateDate,jdbcType=DATE},
+      f_version = #{fVersion,jdbcType=BIGINT},
+      f_is_delete = #{fIsDelete,jdbcType=BIGINT}
+    where f_id = #{fId,jdbcType=BIGINT}
+  </update>
+</mapper>

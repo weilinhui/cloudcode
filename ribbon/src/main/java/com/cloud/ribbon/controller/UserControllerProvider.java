@@ -1,5 +1,6 @@
 package com.cloud.ribbon.controller;
 
+//import com.cloud.ribbon.service.UserServiceProviderImpl;
 import com.cloud.ribbon.pojo.UserBean;
 import com.cloud.ribbon.service.UserServiceProviderImpl;
 import org.springframework.beans.factory.annotation.Autowired;

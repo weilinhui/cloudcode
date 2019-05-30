@@ -17,6 +17,7 @@ import java.util.Map;
  * Created by weilinhui on 2019/5/29.
  */
 @Controller
+@RequestMapping("user")
 public class UserController {
 
 

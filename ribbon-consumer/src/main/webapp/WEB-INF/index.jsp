@@ -3,32 +3,34 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=utf-8"%>
 <title>sunflower</title>
-    <link rel="stylesheet" type="text/css" href="static/file/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/file/index.css">
 </head>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 
 <body class="index">
 <h1>this is index.jsp</h1>
+<span>${ctx}</span>
     <ul>
         <li>
-            <input type="text" value="${sessionScope.user.fUserAccount}">
+            <input type="text" value="${sessionScope.user.fUserPhone}">
             <input type="text" value="${sessionScope.user.fUserPhone}">
             <input type="text" value="${sessionScope.user.fUserRelname}">
             <input type="text" value="${sessionScope.user.fUserNick}">
         </li>
         <li>
-            <input type="text" value="${sessionScope.user.fUserAccount}">
+            <input type="text" value="${sessionScope.user.fUserPhone}">
             <input type="text" value="${sessionScope.user.fUserPhone}">
             <input type="text" value="${sessionScope.user.fUserRelname}">
             <input type="text" value="${sessionScope.user.fUserNick}">
         </li>
         <li>
-            <input type="text" value="${sessionScope.user.fUserAccount}">
+            <input type="text" value="${sessionScope.user.fUserPhone}">
             <input type="text" value="${sessionScope.user.fUserPhone}">
             <input type="text" value="${sessionScope.user.fUserRelname}">
             <input type="text" value="${sessionScope.user.fUserNick}">
         </li>
         <li>
-            <input type="text" value="${sessionScope.user.fUserAccount}">
+            <input type="text" value="${sessionScope.user.fUserPhone}">
             <input type="text" value="${sessionScope.user.fUserPhone}">
             <input type="text" value="${sessionScope.user.fUserRelname}">
             <input type="text" value="${sessionScope.user.fUserNick}">

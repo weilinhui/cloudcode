@@ -1,3 +1,3 @@
-com\cloud\ribbon\consumer\RibbonConsumerApplication.class
 com\cloud\ribbon\consumer\service\UserService.class
+com\cloud\ribbon\consumer\RibbonConsumerApplication.class
 com\cloud\ribbon\consumer\controller\UserController.class

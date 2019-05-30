@@ -4,14 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ page contentType="text/html;charset=utf-8"%>
 <title>sunflower</title>
-<link href="static/file/login.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/static/file/login.css" rel="stylesheet" type="text/css">
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-<script src="static/file/login.js"></script>
+<script src="${pageContext.request.contextPath}/static/file/login.js"></script>
 </head>
 
 <body class="login" mycollectionplug="bind">
 <div class="login_m">
-<div class="login_logo"><img src="/static/file/logo.png" width="46" height="46"></div>
+<div class="login_logo"><img src="${pageContext.request.contextPath}/static/file/logo.png" width="46" height="46"></div>
 <div class="login_boder">
 
 <div class="login_padding" id="login_model">

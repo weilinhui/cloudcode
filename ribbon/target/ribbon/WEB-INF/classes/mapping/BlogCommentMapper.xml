@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.ribbon.mapper.BlogCommentMapper" >
+  <resultMap id="BaseResultMap" type="com.cloud.ribbon.pojo.BlogComment" >
+    <id column="f_id" property="fId" jdbcType="BIGINT" />
+    <result column="f_blog_id" property="fBlogId" jdbcType="VARCHAR" />
+    <result column="f_comment_user" property="fCommentUser" jdbcType="VARCHAR" />
+    <result column="f_content" property="fContent" jdbcType="VARCHAR" />
+    <result column="f_create_user" property="fCreateUser" jdbcType="BIGINT" />
+    <result column="f_create_date" property="fCreateDate" jdbcType="DATE" />
+    <result column="f_update_date" property="fUpdateDate" jdbcType="DATE" />
+    <result column="f_version" property="fVersion" jdbcType="BIGINT" />
+    <result column="f_is_delete" property="fIsDelete" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_id, f_blog_id, f_comment_user, f_content, f_create_user, f_create_date, f_update_date, 
+    f_version, f_is_delete
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_blog_comment
+    where f_id = #{fId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sys_blog_comment
+    where f_id = #{fId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.cloud.ribbon.pojo.BlogComment" >
+    insert into sys_blog_comment (f_id, f_blog_id, f_comment_user, 
+      f_content, f_create_user, f_create_date, 
+      f_update_date, f_version, f_is_delete
+      )
+    values (#{fId,jdbcType=BIGINT}, #{fBlogId,jdbcType=VARCHAR}, #{fCommentUser,jdbcType=VARCHAR}, 
+      #{fContent,jdbcType=VARCHAR}, #{fCreateUser,jdbcType=BIGINT}, #{fCreateDate,jdbcType=DATE}, 
+      #{fUpdateDate,jdbcType=DATE}, #{fVersion,jdbcType=BIGINT}, #{fIsDelete,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cloud.ribbon.pojo.BlogComment" >
+    insert into sys_blog_comment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fId != null" >
+        f_id,
+      </if>
+      <if test="fBlogId != null" >
+        f_blog_id,
+      </if>
+      <if test="fCommentUser != null" >
+        f_comment_user,
+      </if>
+      <if test="fContent != null" >
+        f_content,
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user,
+      </if>
+      <if test="fCreateDate != null" >
+        f_create_date,
+      </if>
+      <if test="fUpdateDate != null" >
+        f_update_date,
+      </if>
+      <if test="fVersion != null" >
+        f_version,
+      </if>
+      <if test="fIsDelete != null" >
+        f_is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fId != null" >
+        #{fId,jdbcType=BIGINT},
+      </if>
+      <if test="fBlogId != null" >
+        #{fBlogId,jdbcType=VARCHAR},
+      </if>
+      <if test="fCommentUser != null" >
+        #{fCommentUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fContent != null" >
+        #{fContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateUser != null" >
+        #{fCreateUser,jdbcType=BIGINT},
+      </if>
+      <if test="fCreateDate != null" >
+        #{fCreateDate,jdbcType=DATE},
+      </if>
+      <if test="fUpdateDate != null" >
+        #{fUpdateDate,jdbcType=DATE},
+      </if>
+      <if test="fVersion != null" >
+        #{fVersion,jdbcType=BIGINT},
+      </if>
+      <if test="fIsDelete != null" >
+        #{fIsDelete,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cloud.ribbon.pojo.BlogComment" >
+    update sys_blog_comment
+    <set >
+      <if test="fBlogId != null" >
+        f_blog_id = #{fBlogId,jdbcType=VARCHAR},
+      </if>
+      <if test="fCommentUser != null" >
+        f_comment_user = #{fCommentUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fContent != null" >
+        f_content = #{fContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user = #{fCreateUser,jdbcType=BIGINT},
+      </if>
+      <if test="fCreateDate != null" >
+        f_create_date = #{fCreateDate,jdbcType=DATE},
+      </if>
+      <if test="fUpdateDate != null" >
+        f_update_date = #{fUpdateDate,jdbcType=DATE},
+      </if>
+      <if test="fVersion != null" >
+        f_version = #{fVersion,jdbcType=BIGINT},
+      </if>
+      <if test="fIsDelete != null" >
+        f_is_delete = #{fIsDelete,jdbcType=BIGINT},
+      </if>
+    </set>
+    where f_id = #{fId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cloud.ribbon.pojo.BlogComment" >
+    update sys_blog_comment
+    set f_blog_id = #{fBlogId,jdbcType=VARCHAR},
+      f_comment_user = #{fCommentUser,jdbcType=VARCHAR},
+      f_content = #{fContent,jdbcType=VARCHAR},
+      f_create_user = #{fCreateUser,jdbcType=BIGINT},
+      f_create_date = #{fCreateDate,jdbcType=DATE},
+      f_update_date = #{fUpdateDate,jdbcType=DATE},
+      f_version = #{fVersion,jdbcType=BIGINT},
+      f_is_delete = #{fIsDelete,jdbcType=BIGINT}
+    where f_id = #{fId,jdbcType=BIGINT}
+  </update>
+</mapper>
