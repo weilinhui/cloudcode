@@ -19,7 +19,7 @@ spring:
       initial-size: 5
     url: jdbc:mysql://192.168.154.128:3306/sunflower?setUnicode=true&characterEncoding=utf8
     username: root
-    password: password
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
 mybatis:
   mapper-locations: classpath*:mapping/*.xml

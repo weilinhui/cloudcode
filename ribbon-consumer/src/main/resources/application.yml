@@ -7,3 +7,8 @@ server:
 spring:
   application:
     name: ribbon-consumer
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+    static-path-pattern: /static/**

@@ -7,6 +7,9 @@
           <element id="module-output" name="ribbon" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="demo_api-1.0.jar">
+            <element id="module-output" name="demo_api" />
+          </element>
           <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-starter:2.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-context:2.1.1.RELEASE" />

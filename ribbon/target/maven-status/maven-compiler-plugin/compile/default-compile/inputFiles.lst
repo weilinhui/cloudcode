@@ -1,5 +1,5 @@
 E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\pojo\UserBean.java
-E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\service\HelloService.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\service\UserServiceProviderImpl.java
 E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\mapper\UserBeanMapper.java
 E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\RibbonApplication.java
-E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\controller\HelloController.java
+E:\github.com\cloudcode\ribbon\src\main\java\com\cloud\ribbon\controller\UserControllerProvider.java

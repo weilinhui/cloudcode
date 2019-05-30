@@ -1,5 +1,5 @@
-com\cloud\ribbon\controller\HelloController.class
 com\cloud\ribbon\mapper\UserBeanMapper.class
 com\cloud\ribbon\pojo\UserBean.class
-com\cloud\ribbon\service\HelloService.class
 com\cloud\ribbon\RibbonApplication.class
+com\cloud\ribbon\controller\UserControllerProvider.class
+com\cloud\ribbon\service\UserServiceProviderImpl.class
